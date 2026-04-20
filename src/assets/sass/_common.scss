@@ -1,0 +1,35 @@
+@use './_reset';
+@use './_mixin' as *;
+
+$spw : 786;
+$pcw : 2880;
+
+
+
+
+
+
+body{
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+
+
+.sp{
+    display: block;
+    @include pc{
+        display: none;
+    }
+}
+.pc{
+    display: none;
+    @include pc{
+        display: block;
+    }
+}
+
+
+a{
+    cursor: pointer;
+}

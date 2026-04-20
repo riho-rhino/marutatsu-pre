@@ -1,0 +1,11 @@
+<%
+  const serverURL = '.'
+  const ENVType = process.env.NODE_ENV
+  rootURL = ENVType === 'production' ? serverURL : ''
+%>
+
+<%- include('./_modules/_header.ejs') %>
+
+<%- include('./_modules/_contents.ejs') %>
+
+<%- include('./_modules/_footer.ejs') %>

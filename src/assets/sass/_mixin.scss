@@ -1,0 +1,30 @@
+// pcサイズ
+@mixin pc {
+  @media screen and (min-width: 920px) {
+    @content;
+  }
+}
+
+// スマホサイズ
+@mixin sp {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+
+@function spc($value){
+  @return calc($value / 750) * 100%;
+}
+@function pcc($value){
+  @return calc($value / 2732) * 100%;
+}
+
+// fontsize
+
+@function spf($value){
+  @return calc($value / 750 * 100vw);
+}
+@function pcf($value){
+  @return calc($value / 2880 * 100vw);
+}

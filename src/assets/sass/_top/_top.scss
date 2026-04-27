@@ -189,13 +189,13 @@ $top: 1121;
     .swiper-button-prev{
         left: 0!important;
         &::after{
-            background-image: url(../img/top-prev-pc.png);
+            background-image: url(../img/top/top-prev-pc.png);
         }
     }
     .swiper-button-next{
         right: 0!important;
         &::after{
-            background-image: url(../img/top-next-pc.png);
+            background-image: url(../img/top/top-next-pc.png);
         }
     }
     @include sp{
@@ -212,12 +212,12 @@ $top: 1121;
         }
         .swiper-button-prev{
             &::after{
-                background-image: url(../img/top-prev-sp.png);
+                background-image: url(../img/top/top-prev-sp.png);
             }
         }
         .swiper-button-next{
             &::after{
-                background-image: url(../img/top-next-sp.png);
+                background-image: url(../img/top/top-next-sp.png);
             }
         }
     }

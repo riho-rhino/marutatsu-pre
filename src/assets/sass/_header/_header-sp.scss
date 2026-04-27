@@ -138,6 +138,11 @@
     width: spc(332.5);
     margin: 0 auto;
     border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    .sp-common-header__logo{
+        width: spc(121);
+        margin-bottom: spc(45);
+        line-height: 0;
+    }
     .sp-common-header__headline{
         font-weight: bold;
         display: flex;

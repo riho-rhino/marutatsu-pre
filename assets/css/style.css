@@ -567,13 +567,13 @@ svg {
   left: 0 !important;
 }
 .side-pagination .swiper-button-prev::after {
-  background-image: url(../img/top-prev-pc.png);
+  background-image: url(../img/top/top-prev-pc.png);
 }
 .side-pagination .swiper-button-next {
   right: 0 !important;
 }
 .side-pagination .swiper-button-next::after {
-  background-image: url(../img/top-next-pc.png);
+  background-image: url(../img/top/top-next-pc.png);
 }
 @media screen and (max-width: 919px) {
   .side-pagination {
@@ -590,10 +590,10 @@ svg {
     height: 30px !important;
   }
   .side-pagination .swiper-button-prev::after {
-    background-image: url(../img/top-prev-sp.png);
+    background-image: url(../img/top/top-prev-sp.png);
   }
   .side-pagination .swiper-button-next::after {
-    background-image: url(../img/top-next-sp.png);
+    background-image: url(../img/top/top-next-sp.png);
   }
 }
 
@@ -2732,6 +2732,11 @@ svg {
   width: 88.6666666667%;
   margin: 0 auto;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+.sp-common-header__menu-inner .sp-common-header__logo {
+  width: 32.2666666667%;
+  margin-bottom: 12%;
+  line-height: 0;
 }
 .sp-common-header__menu-inner .sp-common-header__headline {
   font-weight: bold;

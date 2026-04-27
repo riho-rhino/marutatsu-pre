@@ -1,5 +1,7 @@
 import pkg from 'gulp'
+
 const { src, dest, series, parallel, watch } = pkg
+import gulp from 'gulp';
 
 import gulpEjs from 'gulp-ejs'
 import gulpRename from 'gulp-rename'

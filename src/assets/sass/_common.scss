@@ -4,12 +4,17 @@
 $spw : 786;
 $pcw : 2880;
 
-
-
-
-
+$text: #282828;
+$gray: #D8D8D8;
+$footer: #D7D7D7;
 
 body{
+    color: #282828;
+    background: #ECECEC;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     &.noscroll{
         overflow: hidden;
     }
@@ -32,4 +37,38 @@ body{
 
 a{
     cursor: pointer;
+}
+
+svg{
+    width: 100%;
+}
+
+
+
+
+.en {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+//   font-weight: <weight>;
+  font-style: normal;
+}
+
+
+.ja {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+.fadein{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    &.in{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

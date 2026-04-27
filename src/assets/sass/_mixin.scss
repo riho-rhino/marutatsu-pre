@@ -7,24 +7,44 @@
 
 // スマホサイズ
 @mixin sp {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 919px) {
     @content;
   }
 }
 
 
 @function spc($value){
-  @return calc($value / 750) * 100%;
+  @return calc($value / 375) * 100%;
 }
 @function pcc($value){
-  @return calc($value / 2732) * 100%;
+  @return calc($value / 1440) * 100%;
 }
+
+// pickup
+@function psp($value){
+  @return calc($value / 336) * 100%;
+}
+// lineup
+@function lsp($value){
+  @return calc($value / 358) * 100%;
+}
+@function lpc($value){
+  @return calc($value / 1360) * 100%;
+}
+// ranking
+@function rpc($value){
+  @return calc($value / 1120) * 100%;
+}
+@function rsp($value){
+  @return calc($value / 336) * 100%;
+}
+
 
 // fontsize
 
 @function spf($value){
-  @return calc($value / 750 * 100vw);
+  @return calc($value / 375 * 100vw);
 }
 @function pcf($value){
-  @return calc($value / 2880 * 100vw);
+  @return calc($value / 1440 * 100vw);
 }

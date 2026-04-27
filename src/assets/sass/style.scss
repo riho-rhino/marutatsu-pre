@@ -1,4 +1,19 @@
 @use './_reset';
 @use './_mixin' as *;
 @use './_common' as c;
+@use './_top/_top';
+@use './_top/_top-swiper';
+@use './_top/_tag';
+@use './_top/_parts';
+@use './_top/_pickup';
+@use './_top/_lineup';
+@use './_top/_accordion';
+@use './_top/_service';
+@use './_top/_ranking';
+@use './_top/_contact';
+// 共通
+@use './_footer/_footer';
+@use './_footer/_footer-parts';
+@use './_header/_header-pc';
+@use './_header/_header-sp';
 

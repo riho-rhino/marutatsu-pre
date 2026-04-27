@@ -1,0 +1,191 @@
+@use '../_reset';
+@use '../_mixin' as *;
+@use '../_common' as c;
+
+@function fpc($value){
+  @return calc($value / 1360) * 100%;
+}
+@function fsp($value){
+  @return calc($value / 359) * 100%;
+}
+
+
+
+.common-footer__headline{
+    position: relative;
+    font-size: min(pcf(20),20px);
+    line-height: 1;
+    padding: 12px 13px 12px 21px;
+    border-radius: 30px;
+    background: none;
+    transition: all .3s ease;
+    font-weight: bold;
+    width: fit-content;
+    a{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        color: #F4F1EA;
+        transition: all .3s ease;
+    }
+    span{
+        width: 19px;
+        position: relative;
+        line-height: 0;
+    }
+    
+    p,span{
+        display: block;
+    }
+    @include sp{
+        font-size: spf(18);
+        padding: 34px 0 0;
+        border-radius: 30px;
+        span{
+            width: 17px;
+        }        
+    }
+
+    &:hover{
+        background: #F4F1EA;
+        a{
+            color: c.$text;
+        }
+        .white,.black{
+            opacity: 1;
+        }
+    }
+}
+
+
+.common-footer__links{
+    .common-footer__link{
+        margin-left: 8px;
+        a{
+            position: relative;
+            font-size: min(pcf(14),14px);
+            line-height: 1;
+            display: block;
+            color: #F4F1EA;
+            background: none;
+            transition: all .3s ease;
+            width: fit-content;
+            
+            letter-spacing: 0.01em;
+            &::before{
+                content: "";
+                width: 8px;
+                height: 4px;
+                background: #F4F1EA;
+                border-radius: 5px;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: all .3s ease;
+                margin-left: 12px;
+            }
+            @include pc{
+                padding: 7px 12px 7px 26px;
+                border-radius: 15px;
+            }
+        }
+
+        @include sp{
+            margin-left: 0px;
+            margin-top: 14px;
+            a{
+                font-size: spf(13);
+                line-height: calc(19.3 / 13);
+                padding: 0px 12px 0px 16px;
+                background: none;
+                transition: all .3s ease;
+                width: fit-content;
+                border-radius: 15px;
+                letter-spacing: 0.01em;
+                &::before{
+                    width: 8px;
+                    height: 4px;
+                    margin-left: 0px;
+                }
+            }            
+        }
+
+        &:hover{
+            a{
+                color: c.$text;
+                background: #F4F1EA;
+                &::before{
+                    background: c.$text;
+                }
+            }
+        }
+    }
+}
+
+
+
+.common-footer__bottom{
+    border-top: solid 1px #ECECEC;
+    padding-top: fpc(49);
+    margin:  fpc(70) auto 0;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-between;
+    font-size: min(pcf(13),13px);
+    line-height: 1;
+    .common-footer__company-wrap{
+        cursor: pointer;
+        opacity: 1;
+        display: flex;
+        justify-content: left;
+        gap: 34px;
+        
+        a{
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            color: #F4F1EA;
+        }
+    }
+    .common-footer__company{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        vertical-align: middle;
+        opacity: 1;
+        &:hover{
+            opacity: 0.7;
+            transition: all .3s ease;
+        }
+        span{
+            line-height: 0;
+            width: 11px;
+        }
+        p,span{
+            display: block;
+        }
+    }
+    .common-footer__copyright{
+        font-weight: 500;
+    }
+    @include sp{
+        padding-top: 46px;
+        margin:  0 auto;
+        display: block;
+        font-size: spf(13);
+        .common-footer__company-wrap{
+            justify-content: center;
+            gap: 34px;
+            a{
+                gap: 8px;
+            }
+        }   
+        .common-footer__copyright{
+            margin-top: 17px;
+        }     
+    }
+}
+

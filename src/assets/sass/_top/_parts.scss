@@ -1,0 +1,103 @@
+@use '../_reset';
+@use '../_mixin' as *;
+@use '../_common' as c;
+
+.top-section{
+    position: relative;
+    z-index: 10;
+    &__subtitle{
+        font-size: min(pcf(20),20px);
+        line-height: 1;
+        font-weight: 400;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform .3s .5s linear,opacity .1s .5s ease;
+    }
+    &__title{
+        font-size: min(pcf(106),106px);
+        line-height: 1;
+        margin-top: 5px;
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;        
+        display: flex;
+        justify-content: center;
+        span{
+            display: block;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform .3s 1s cubic-bezier(0,-0.02,.35,1.48),opacity .1s 1s ease;
+        }
+    }
+    @include sp{
+        
+        &__subtitle{
+            font-size: spf(14);
+            line-height: 1;
+            font-weight: bold;
+        }
+        &__title{
+            font-size: spf(56);
+
+        }        
+    }
+    &.in{
+        .top-section-svg{
+            svg .svg-elem-1 {
+            stroke-dashoffset: 0;
+            -webkit-transition: stroke-dashoffset 1.5s cubic-bezier(0.37, 0, 0.63, 1);
+                    transition: stroke-dashoffset 1.5s cubic-bezier(0.37, 0, 0.63, 1);
+        }}
+        .top-section__subtitle{
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .top-section__title{
+            span{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    
+}
+
+.top-lineup{
+    @include pc{
+        .top-section__title{
+            justify-content: left;
+        }
+    }
+}
+
+@for $value from 1 through 7{
+    .top-section__title {
+        span:nth-of-type(#{$value}){
+            transition-delay: 0.08s * $value;
+        }
+    }
+}
+
+.marutatsu-top__wrapper{
+    .common-footer{
+        background: c.$gray;
+        padding-bottom: pcc(49);
+    }
+}
+
+.white{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .3s ease;
+}
+.black{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .3s ease;
+}

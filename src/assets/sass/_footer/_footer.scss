@@ -1,0 +1,117 @@
+@use '../_reset';
+@use '../_mixin' as *;
+@use '../_common' as c;
+
+@function fpc($value){
+  @return calc($value / 1360) * 100%;
+}
+@function fsp($value){
+  @return calc($value / 359) * 100%;
+}
+
+.common-footer{
+    padding-bottom: pcc(56);
+    &__inner{
+        width: pcc(1360);
+        margin: 0 auto;
+        background: #282828;
+        color: #F4F1EA;
+        border-radius: 15px;
+        padding: pcc(59) pcc(79) pcc(67) pcc(72);
+    }
+    &__contents{
+        display: flex;
+        align-items: flex-start;
+        vertical-align: middle;
+        justify-content: space-between;
+        position: relative;
+    }
+    &__logo{
+        line-height: 0;
+        width: calc(260 / 1208) * 100%;
+
+    }
+    &__right{
+        
+        position: relative;
+    }
+    @include sp{
+        padding-bottom: spc(19);
+        &__inner{
+            width: spc(359);
+            border-radius: 15px;
+            padding: spc(50) spc(20) spc(46) spc(23);
+        }
+        &__contents{
+            display: block;
+        }
+        &__logo{
+            width: calc(223.6 / 359) * 100%;
+            margin: 0 auto calc(46.7 / 359) * 100%;
+        }
+        &__right{
+            border-top: solid 1px #F4F1EA;
+            position: relative;
+        }        
+    }
+}
+.common-footer__item{
+    margin-top: 40px;
+
+    .common-footer__item-lists-wrap{
+        display: flex;
+        align-items: flex-start;
+        gap: 26px;
+        margin-top: 13px;
+    }
+    @include sp{
+        margin: 0;
+        .common-footer__item-lists-wrap{
+            display: block;
+        }
+        .common-footer__item-lists{
+            display: flex;
+            flex-wrap: wrap;
+            >li{
+                width: 50%;
+                
+            }
+        }
+    }
+}
+.common-footer__feature-lists{
+    margin-top: 13px;
+}
+.common-footer__service{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: calc(237 / 664) * 100%;
+    
+    .common-footer__service-lists1{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 13px;
+    }
+    @include sp{
+        position: inherit;
+        margin-right: 0;
+        .common-footer__service-lists1{
+            width: 100%;
+            >li{
+                width: 50%;
+            }
+        }
+    }
+}
+
+.common-footer__contact-wrap{
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include sp{
+        position: inherit;
+        padding-bottom: 37px;
+    }
+}

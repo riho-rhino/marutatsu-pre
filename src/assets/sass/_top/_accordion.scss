@@ -1,0 +1,213 @@
+@use '../_reset';
+@use '../_mixin' as *;
+@use '../_common' as c;
+
+
+.accordion {
+  background-color: #fff;
+  border-radius: 10px;
+  width: lpc(1120);
+  margin: lpc(22) auto 0;
+  font-weight: bold;
+    .wrapper {
+        width: 100%;
+    }
+    @include sp{
+        width: lsp(325);
+        margin: lsp(12) auto 0;
+    }
+}
+
+.accordion_block_unit  {
+    .question{
+        position: relative;
+        width: calc(1000 / 1120) * 100%;
+        padding: calc(39 / 1120) * 100% 0;
+        margin: 0 auto 0 calc(57 / 1120) * 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        vertical-align: middle;
+        p {
+            display: block;
+            font-weight: bold;
+            font-size: min(pcf(18),18px);
+            line-height: calc(28 / 18);
+        }
+        span{
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #000;
+            position: relative;
+            &::before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #000;
+                transform: rotate(0);
+                transform-origin: center center;
+                transition: all .3s ease;
+                content: "";
+            }
+        }
+        &.open{
+            span{
+                &::before{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        @include sp{
+            width: calc(290 / 325) * 100%;
+            padding: calc(21 / 325) * 100% 0 calc(21 / 325) * 100%;
+            margin: 0 auto 0 calc(15 / 325) * 100%;
+            p {
+                font-size: spf(16);
+                line-height: calc(28 / 16);
+            }
+            span{
+                width: 14px;
+            }            
+        }
+    }
+    .answer {
+        overflow: hidden;
+        max-height: 0;
+        -webkit-transition: max-height ease 0.4s;
+        -moz-transition: max-height ease 0.4s;
+        transition: max-height ease 0.4s;
+    }
+    .answer_block {
+        width: 100%;
+    }
+    .answer_block_unit {
+        width: calc(1021 / 1120) * 100%;
+        margin: 0 auto 0 calc(57 / 1120) * 100%;
+        padding: 0 0 calc(54 / 1120) * 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        >li{
+            cursor: pointer;
+            position: relative;
+            width: calc(238 / 1021) * 100%;
+            border-bottom: solid 1px c.$gray;
+            padding: 0{
+                top: calc(30 / 1021) * 100%;
+                bottom: calc(27 / 1021) * 100%;
+                right: calc(16 / 1021) * 100%;
+            };
+            &:nth-of-type(5){
+                padding: 0{
+                    top: calc(25 / 1021) * 100%;
+                    bottom: calc(18 / 1021) * 100%;
+                    right: calc(16 / 1021) * 100%;
+                };
+            }
+            
+            &:nth-of-type(13),
+            &:nth-of-type(14),
+            &:nth-of-type(15),
+            &:nth-of-type(16){
+                border-bottom:none;
+            }
+            &:nth-of-type(4),
+            &:nth-of-type(8),
+            &:nth-of-type(12),
+            &:nth-of-type(15),
+            &:nth-of-type(16){
+                &::after{
+                    display: none;
+                }
+            }
+            &::after{
+                content: "";
+                width: 1px;
+                height: 80%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                background: c.$gray;
+                margin-right: calc(-12 / 238) * 100%;
+            }
+            a{
+                width: 100%;
+                color: c.$text;
+                display: flex;
+                align-items: center;
+                vertical-align: middle;
+                justify-content: space-between;
+            }
+            p{
+                display: block;
+                font-size: min(pcf(16),16px);
+                line-height: 1.4;
+                stop-opacity: 1;
+            }
+            span{
+                display: block;
+                width: 32px;
+                line-height: 0;
+            }
+            &:hover{
+                p{
+                    opacity: 0.7;
+                    transition: all .3s ease;
+                }
+                span{
+                    transition: all .3s ease;
+                    transform: translate(5px,-5px);
+                }
+            }
+        }
+        @include sp{
+            width: calc(305 / 325) * 100%;
+            margin: 0 auto 0 calc(10 / 325) * 100%;
+            padding: 0 0 calc(27 / 325) * 100%;
+            >li{
+                width: calc(146 / 305) * 100%;
+                padding: 0{
+                    top: calc(16 / 305) * 100%;
+                    bottom: calc(16 / 305) * 100%;
+                    right: calc(2 / 305) * 100%;
+                };
+                &:nth-of-type(5){
+                    padding: 0{
+                        top: calc(13 / 305) * 100%;
+                        bottom: calc(8 / 305) * 100%;
+                        right: calc(2 / 305) * 100%;
+                    };
+                    p{
+                        line-height: calc(19 / 13);
+                    }
+                }
+                &:nth-of-type(2),
+                &:nth-of-type(6),
+                &:nth-of-type(10),
+                &:nth-of-type(14){
+                    &::after{
+                        display: none;
+                    }
+                }
+                &::after{
+                    margin-right: calc(-6 / 145.56) * 100%;
+                }
+                p{
+                    font-size: spf(13);
+                    line-height: calc(22 / 13);
+                }
+                span{
+                    width: 20px;
+                }
+            }            
+        }
+    }
+}
+
+

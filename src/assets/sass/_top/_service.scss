@@ -1,0 +1,164 @@
+@use '../_reset';
+@use '../_mixin' as *;
+@use '../_common' as c;
+
+.top-service{
+    width: pcc(1117);
+    margin: pcc(147) auto 0;
+    display: flex;
+    justify-content: space-between;
+    @include sp{
+        width: spc(335);
+        margin: spc(80) auto 0;
+        display: block;
+    }
+}
+
+.service-left{
+    width: calc(406 / 1117) * 100%;
+    position: sticky;
+    top: 90px;
+    left: 0;
+    height: fit-content;
+    .top-section__headline{
+        text-align: left;
+        margin-top: calc(16 / 406) * 100%;
+        .top-section__title{
+            margin-top: calc(21 / 406) * 100%;
+        }
+    }
+    .service-lead{
+        margin-top: calc(32 / 406) * 100%;
+        font-size: min(pcf(14),14px);
+        line-height: calc(30 / 14);
+    }
+    @include sp{
+        width: 100%;
+        position: inherit;
+        top: 0;
+        .top-section__headline{
+            text-align: center;
+            .top-section__title{
+                margin-top: calc(8 / 406) * 100%;
+            }
+        }
+        .service-lead{
+            margin-top: calc(24 / 335) * 100%;
+            font-size: spf(14);
+            line-height: calc(24 / 14);
+        }
+
+    }
+}
+
+.service-list{
+    width: calc(390 / 406) * 100%;
+    margin-top: calc(45 / 406) * 100%;
+    >li{
+        border-radius: 15px;
+        background: #fff;
+        position: relative;
+        margin-top: calc(16 / 390) * 100%;
+        transform: translate(0);
+        padding: 0{
+            top: calc(24 / 390) * 100%;
+            bottom: calc(24 / 390) * 100%;
+            left: calc(28 / 390) * 100%;
+        };
+        &:first-of-type{
+            margin-top: 0;
+        }
+        &:hover{
+            transform: translateX(25px);
+            background: #D3D3D3;
+            transition: all .3s ease;
+        }
+        .service-list__arrow{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 32px;
+            line-height: 0;
+            margin-right: calc(21 / 390) * 100%;
+        }
+        a{
+            color: c.$text;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+        }
+        .service-list__num,.service-list__category {
+            font-weight: bold;
+            font-size: min(pcf(18),18px);
+            line-height: calc(38.3 / 18);
+            letter-spacing: 0.01em;
+            display: block;
+        }
+        .service-list__num{
+            margin-right: calc(26 / 390) * 100%;
+        }
+    }
+}
+
+.service-right{
+    width: calc(618 / 1117) * 100%;
+    .service-category-list{
+        >li{
+            line-height: 0;
+            margin-top: calc(45 / 618) * 100%;
+            position: relative;
+            &:first-of-type{
+                margin-top: 0;
+            }
+            .category-name{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(113 / 618) * 100%;
+                line-height: 1;
+                text-align: center;
+                background: #ECECEC;
+                padding: calc(13 / 618) * 100% 0 calc(20 / 618) * 100%;
+                border-radius: 0 0 15px 0;
+                font-weight: bold;
+                font-size: min(pcf(18),18px);
+                letter-spacing: 0.01em;
+            }
+            a{
+                color: c.$text;
+
+            }
+            .category-arrow{
+                display: none;
+            }
+        }
+    }
+    @include sp{
+        width: 100%;
+        margin-top: calc(36 / 335) * 100%;
+        .service-category-list{
+            >li{
+                margin-top: calc(20 / 335) * 100%;
+                .category-name{
+                    border-radius: 0 0 10px 0;
+                    width: calc(115 / 335) * 100%;
+                    padding: calc(16 / 335) * 100% 0 calc(16 / 335) * 100% calc(5 / 335) * 100%;
+                    font-size: spf(16);
+                    text-align: left;
+                }
+                .category-arrow{
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    margin-right: calc(11 / 115) * 100%;
+                    line-height: 0;
+                    width: 21px;
+
+                }
+            }        
+        }
+    }
+}

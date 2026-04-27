@@ -1,0 +1,61 @@
+@use '../_reset';
+@use '../_mixin' as *;
+@use '../_common' as c;
+
+.top-alltags{
+    $w : 506;
+    width: pcc($w);
+    margin: 0 auto;
+    .top-tag-lists{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap:13px calc(9.8 / $w) * 100%;
+        justify-content: center;
+        >li{
+            opacity: 1;
+            transition: all .3s ease;
+            a{
+                display: block;
+                white-space: nowrap;
+                font-size: min(pcf(16),16px);
+                line-height: calc(28.3 / 16);
+                color: c.$text;
+                background: #fff;
+                border-radius: 30px;
+                font-weight: 500;
+                padding: 0{
+                    top: 6.54px;
+                    bottom: 6.54px;
+                    right: 22px;
+                    left: 27px;
+                };
+            }
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+    @include sp{
+        $spw : 298;
+        width: spc($spw);
+        .top-tag-lists{
+            gap:11px calc(6 / $spw) * 100%;
+            >li{
+                a{
+                    font-size: spf(13);
+                    border-radius: 20px;
+                    padding: 0{
+                        top: 6px;
+                        bottom: 6px;
+                        right: 15px;
+                        left: 20px;
+                    };
+                }
+                &:nth-of-type(4){
+                    margin-left: calc(20 / $spw) * 100%;
+                }
+            }
+        }
+    }
+}
